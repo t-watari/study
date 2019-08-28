@@ -5,7 +5,9 @@ for  internship 2019/08
 
 # 前準備
 
-## Amazon Correttoのインストール
+## 環境構築
+
+### Amazon Correttoのインストール
 
 1. 以下のURLからAmazon Corretto 8をDLする
  https://aws.amazon.com/jp/corretto/
@@ -18,7 +20,7 @@ for  internship 2019/08
     コマンドプロンプトから ```java -version```を実行
     正常にJavaのversionが表示されたらOK
     
-## mavenのインストール
+### mavenのインストール
 
 1. 以下のURLからMavenをDLする
 　https://maven.apache.org/download.cgi
@@ -32,7 +34,7 @@ for  internship 2019/08
    コマンドプロンプトから ```mvn -v```を実行
    正常にmavenのversionが表示されたらOK
    
-## Gradleのインストール
+### Gradleのインストール
 
 1. 以下のURLからGradleをDLする
    https://gradle.org/releases/
@@ -45,15 +47,11 @@ for  internship 2019/08
    コマンドプロンプトから ```gradle -version```を実行
    正常にgradleのversionが表示されたらOK
    
-## GITのインストール
+### GITのインストール
 1. 以下のURLからGradleをDLする
    https://git-scm.com/download/win
-   
-1. 以下のURLからGradleをDLする
-   https://git-scm.com/download/win
-   
-   
-## Stsのインストール
+
+### Stsのインストール
 
 1. 以下のURLからSTSをDLする
    https://spring.io/tools
