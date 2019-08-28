@@ -1,0 +1,177 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+   <head th:replace="/common/head.html :: common_header(~{::title},~{::link},~{::script})">
+        <meta charset="UTF-8" />
+        <title>勉強用サイト</title>
+        <link></link>
+        <script></script>
+    </head>
+    <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <header class="app-header navbar">
+      <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        	TaskManage
+      </a>
+      <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-3">
+          <a class="nav-link" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item px-3">
+          <a class="nav-link" href="#">Users</a>
+        </li>
+        <li class="nav-item px-3">
+          <a class="nav-link" href="#">Settings</a>i
+        </li>
+      </ul>
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            	▼<span>マイニックネーム</span>さん
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <div class="dropdown-header text-center">
+              <strong>Account</strong>
+            </div>
+            <a class="dropdown-item" href="#">
+              <i class="fa fa-tasks"></i> Tasks
+              <span class="badge badge-danger">42</span>
+            </a>
+            <a class="dropdown-item" href="#">
+              <i class="fa fa-user"></i> Profile</a>
+            <a class="dropdown-item" href="#">
+              <i class="fa fa-lock"></i> Logout</a>
+          </div>
+        </li>
+      </ul>
+    </header>
+    <div class="app-body">
+      <div class="sidebar">
+        <nav class="sidebar-nav">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                <i class="nav-icon icon-speedometer"></i> Dashboard
+              </a>
+            </li>
+            <li class="nav-title">Task</li>
+            <li class="nav-item">
+              <a class="nav-link" href="colors.html">
+                <i class="nav-icon icon-drop"></i> Add</a>
+            </li>
+            <li class="nav-title">users</li>
+            <li class="nav-item">
+              <a class="nav-link" href="colors.html">
+                <i class="nav-icon icon-drop"></i> Add</a>
+			  <a class="nav-link" href="colors.html">
+                <i class="nav-icon icon-drop"></i> List</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+      </div>
+      <main class="main">
+        <!-- Breadcrumb-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">Home</li>
+          <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+        <div class="container-fluid">
+          <div class="animated fadeIn">
+            <div class="row">
+              <div class="col-sm-6 col-lg-3">
+                <div class="card text-white bg-primary">
+                  <div class="card-body pb-0">
+                    <div class="btn-group float-right">
+                    </div>
+                    <div class="text-value">9.823　件</div>
+                    <div>未着手</div>
+                  </div>
+                  <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
+                    <canvas class="chart" id="card-chart1" height="70"></canvas>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+              <div class="col-sm-6 col-lg-3">
+                <div class="card text-white bg-info">
+                  <div class="card-body pb-0">
+                    <div class="text-value">9.823　件</div>
+                    <div>着手</div>
+                  </div>
+                  <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
+                    <canvas class="chart" id="card-chart2" height="70"></canvas>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+              <div class="col-sm-6 col-lg-3">
+                <div class="card text-white bg-warning">
+                  <div class="card-body pb-0">
+                    <div class="btn-group float-right">
+                    </div>
+                    <div class="text-value">9.823　件</div>
+                    <div>期限間近</div>
+                  </div>
+                  <div class="chart-wrapper mt-3" style="height:70px;">
+                    <canvas class="chart" id="card-chart3" height="70"></canvas>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+              <div class="col-sm-6 col-lg-3">
+                <div class="card text-white bg-danger">
+                  <div class="card-body pb-0">
+                    <div class="btn-group float-right">
+                    </div>
+                    <div class="text-value">9.823　件</div>
+                    <div>期限超過</div>
+                  </div>
+                  <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
+                    <canvas class="chart" id="card-chart4" height="70"></canvas>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+            </div>
+            <!-- /.row-->
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-5">
+                    <h4 class="card-title mb-0">Tasks</h4>
+                    <div class="small text-muted">（対象の日付）</div>
+                  </div>
+                </div>
+                <div class="row">
+                	<table class="table table-responsive-sm table-hover table-outline mb-0">
+                		<thead class="thead-light">
+                			<tr>
+                				<th>状態</th>
+                				<th>タスク名</th>
+                				<th>重要度</th>
+                				<th>期限</th>
+                			</tr>
+                		</thead>
+                		<tbody>
+                			<tr>
+                				<td class="text-center">	</td>
+                				<td></td>
+                				<td></td>
+                				<td>2019/08/30</td>
+                			</tr>
+                		</tbody>
+                	</table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer class="app-footer">
+      <div>インターンシップ2019</div>
+    </footer>
+  </body>
+</html>
